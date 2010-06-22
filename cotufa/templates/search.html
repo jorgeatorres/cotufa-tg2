@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Search | cotufa</title>
+</head>
+
+<body id="page-search">
+
+    <h1>Search</h1>
+    
+    ${tmpl_context.search_form.display()}
+    
+    <div py:if="defined('results')" py:strip="">
+        <h2>Results for <i>${search_term}</i></h2>
+        
+        <ol py:if="results" class="movielist">
+            <li py:for="r in results" rel="${tg.url('/summary/%s' % r.movieID)}">
+                <div class="listdata">
+                    <span class="title">${r['title']}</span> <span class="year">${r['year']}</span>
+                </div>
+
+                <div class="moviedata"></div>
+
+            </li>
+        </ol>
+        <p py:if="not results">${_('Nothing found.')}</p>
+
+    </div>
+    
+
+</body>
+</html>

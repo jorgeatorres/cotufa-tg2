@@ -1,0 +1,49 @@
+<div xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:py="http://genshi.edgewall.org/"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     class="movie">
+
+    
+    <a href="${tg.url('/add/%s' % movie.id)}" class="addtolist">[add to list]</a>
+    <h2>${movie.title}</h2>
+
+    <div py:if="movie.cover_url is not None" class="moviecover">
+        <img src="${movie.cover_url}" />
+    </div>    
+    
+    <dl>
+        <dt>${_('Year')}</dt> <dd>${movie.year}</dd>
+
+        <dt>${_('Director(s)')}</dt>
+        <dd>
+            <ul>
+                <li py:for="director in movie.directors">
+                    ${director.name}
+                </li>
+            </ul>
+        </dd>
+        
+        <dt>${_('Writer(s)')}</dt>
+        <dd>
+            <ul>
+                <li py:for="writer in movie.writers">
+                    ${writer.name}
+                </li>
+            </ul>
+        </dd>
+        
+        <dt>${_('Cast')}</dt>
+        <dd>
+            <ul class="castlist">
+                <li py:for="c in movie.cast[:8]">
+                    <span class="person">${c.person}</span> <span class="character">${c.character}</span>
+                </li>
+                <li>...</li>
+            </ul>
+        </dd>
+        <dt>IMDB link</dt>
+        <dd><a href="${movie.imdb_url}" class="imdblink">${movie.imdb_url}</a></dd>            
+
+    </dl>
+    
+</div>

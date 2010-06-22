@@ -1,0 +1,363 @@
+/* YUI reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-size: 13px;
+    font-family: "lucida grande", arial, sans-serif;
+    color: #000;
+    background: #fff;
+}
+
+h1 {
+    font-size: 148.5%;
+    color: #99cc00;
+}
+
+h2 {
+    font-size: 120%;
+    color: #696969;
+}
+
+h3 {
+    font-size: 108%;  
+}
+
+
+h1, h2, h3, h4 {
+    margin: 1em 0;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong {
+    font-weight: bold;
+}
+
+blockquote, ul, ol, dl {
+    margin: 1em 1em 1em 25px;
+}
+
+ol li {
+    list-style: decimal outside;
+}
+
+ul li {
+    list-style: disc outside;
+}
+
+p, fieldset, table {
+    margin-bottom: 1em;
+}
+
+table td, table th {
+    font-size: 13px;
+}
+
+p {
+    line-height: 1.4em;
+}
+
+ul, li {
+    margin: 0;
+	padding: 0;
+}
+
+img {
+    border: none;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: #1161d9;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+div#wrapper {
+    margin: 20px auto;
+    width: 900px;
+    height: 100%;
+}
+
+div#header {
+    text-align: right;
+}
+
+ul#mainmenu {
+    margin-right: 20px;
+}
+
+ul#mainmenu li {
+	list-style-type: none;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+ul#mainmenu li.active {
+    font-weight: bold;
+    border-bottom: solid 1px #99cc66;
+}
+
+ul#mainmenu li.active a {
+    text-decoration: none;
+}
+
+div#content {
+    margin: 50px 0 0 0;
+    clear: both;
+}
+
+
+/* cotufa */
+body#page-movies ul.operations {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+body#page-movies ul.operations li {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+ol.movielist > li {
+    list-style: none;
+    padding: 5px 2px 5px 5px;
+    border-bottom: solid 1px #efefef;
+    color: #595959;
+}
+
+ol.movielist > li.expanded {
+    color: #000;
+}
+
+ol.movielist > li div.moviedata {
+    display: none;
+}
+
+ol.movielist > li.expanded div.listdata {
+    font-weight: bold;
+}
+
+ol.movielist > li:hover {
+    background: #ffffcc;
+    color: #000;
+}
+
+ol.movielist > li div.listdata {
+    cursor: pointer;
+}
+
+ol.movielist > li span.year {
+    float: right;
+}
+
+ol.movielist > li div.moviedata {
+    padding: 0 0 0 20px;
+}
+
+div.movie a.addtolist {
+    float: right;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+div.movie a.removefromlist {
+    float: right;
+    color: #494949;
+    font-size: 0.9em;
+}
+
+div.movie div.moviecover {
+    float: left;
+    width: 100px;
+}
+
+div.movie dl {
+    margin-left: 150px;
+}
+
+div.movie dl dt {
+    font-weight: bold;
+    float: left;
+/*    width: 200px;*/
+}
+
+div.movie dl dd {
+    margin-left: 100px;
+}
+
+div.movie dl li {
+    list-style-type: none;
+}
+
+div.movie ul.castlist li span.person {
+}
+
+div.movie ul.castlist li span.character:before {
+    content: '- ';
+}
+
+div.movie ul.castlist li span.character {
+    color: #494949;    
+}
+
+body#page-stats ul li {
+    list-style-type: none;
+}
+
+body#page-stats dl dt {
+    font-weight: bold;
+}
+
+body#page-stats dl dd {
+    padding-left: 10px;
+}
+
+
+body#page-stats div.general-stats {
+    float: left;
+    width: 300px;
+}
+
+
+
+body#page-stats div.people-stats {
+    margin-left: 320px;
+}
+
+body#page-stats div.people-stats dt {
+    margin-top: 20px;
+}
+
+body#page-stats div.people-stats span.count:before {
+    content: '(';
+}
+
+body#page-stats div.people-stats span.count:after {
+    content: ')';
+}
+
+body#page-stats div.people-stats span.count {
+    color: #494949;
+}
+
+
+
+/* Flash messages */
+div#flash {
+	width: 600px;
+	position: fixed;
+	top: 2px;
+	left: 300px;
+	z-index: 999;
+}
+
+div#flash > div {
+	padding: 5px 0 5px 40px;
+    -moz-border-radius: 3px;
+}
+
+div#flash > div.ok {
+   background: #DCE4EF;
+}
+
+div#flash > div.waiting {
+    background: #FAB65A;
+    color: #fff;
+}
+
+div#flash > div.warning {
+    background: #EBEF61;    
+}
+
+div#flash > div.error {
+    background: #F1A498;    
+}
+
+
+/* forms */
+form input {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+form input.textfield, form input.passwordfield, form select, form textarea {
+    padding: 2px 4px;
+    border: solid 1px #999;
+}
+
+form input.textfield:focus, input.passwordfield:focus, form select:focus, form textarea:focus {
+    background: #ffffcc;
+}
+
+form input.submitbutton {
+    padding: 2px 4px;
+    background: #eee;
+    border: solid 1px #AAA;
+    border-bottom-color: #888;
+    font-weight: bold;
+    line-height: 14px;
+    cursor: pointer;
+    color: #555;
+}
+
+form input.submitbutton:hover, form input.submitbutton:focus {
+    color: #000;
+}
+
+form input.checkbox {
+    margin: 10px 0 0;
+}
+
+form td {
+    padding-bottom: 4px;
+    vertical-align: top;
+}
+
+form td.labelcol {
+    padding-right: 10px;
+}
+
+form td.labelcol label {
+    font-weight: bold;
+}
+
+form td.labelcol label:after {
+    content: ':';
+}
+
+form span.fielderror:before {
+    content: '[';
+    margin-right: 2px;
+}
+
+form span.fielderror:after {
+    content: ']';
+    margin-left: 2px;
+}
+
+form span.fieldhelp {
+    vertical-align: top;    
+    color: #999;
+}
+
+form span.fielderror {
+    vertical-align: top;    
+    margin-left: 20px;
+    color: #cc0033;
+}
+
+form input.invalid {
+    border-color: #cc0033;
+}

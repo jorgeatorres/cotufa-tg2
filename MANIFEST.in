@@ -1,0 +1,4 @@
+recursive-include cotufa/public *
+include cotufa/public/favicon.ico
+recursive-include cotufa/i18n *
+recursive-include cotufa/templates *

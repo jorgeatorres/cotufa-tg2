@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude" py:with="page='stats';">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>(Un)Useful Stats | cotufa</title>
+</head>
+
+<body id="page-stats">
+
+    <h1>(Un)useful Stats</h1>
+
+    <div class="general-stats">
+        <dl>
+            <dt>Movie count:</dt>
+            <dd>${total_count}</dd>        
+<!--!
+            <dt>Total runtime (aprox.):</dt>
+            <dd>${total_runtime}</dd>-->
+        
+            <dt>IMDB top 250 count:</dt>
+            <dd>${top250_count}</dd>
+            
+            <dt>IMDB bottom 100 count:</dt>
+            <dd>${bottom100_count}</dd>
+        </dl>
+    </div>
+    
+    <div class="people-stats">
+        <dl>
+            <dt>Most seen directors:</dt>
+            <dd>
+                <ul class="directorslist">
+                    <li py:for="p, n in top_directors" title="${n} movies">
+                        <span class="person"><a href="${p.imdb_url}">${p.name}</a></span> <span class="count">${n}</span>
+                    </li>
+                </ul>
+            </dd>
+            
+            <dt>Most seen actors/actresses:</dt>
+            <dd>
+                <ul class="actorslist">
+                    <li py:for="p, n in top_actors" title="${n} movies">
+                        <span class="person"><a href="${p.imdb_url}">${p.name}</a></span> <span class="count">${n}</span>
+                    </li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+    
+
+</body>
+</html>

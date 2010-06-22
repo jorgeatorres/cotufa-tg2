@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude" py:with="page='movies';">
+
+  <xi:include href="master.html" />
+
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" py:replace="''"/>
+  <title>Movies | cotufa</title>
+</head>
+
+<body id="page-movies">
+
+    <h1>Movies</h1>
+    
+    <ul class="operations">
+        <li><a href="${tg.url('/search')}">[search/add movie]</a></li>
+        <li><a href="${tg.url('/export')}">[export as HTML]</a></li>
+    </ul>
+
+    <ol class="movielist">
+        <li py:for="movie in movies" id="m${movie.id}" rel="${tg.url('/movie_details/%s' % movie.id)}">
+            <div class="listdata">
+                <span class="title">${movie.title}</span> <span class="year">${movie.year}</span>
+            </div>
+
+            <div class="moviedata"></div>
+
+        </li>
+    </ol>
+    
+
+</body>
+</html>
